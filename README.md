@@ -120,7 +120,7 @@ class DashboardView extends Viewable
     /**
      * The user instance.
      *
-     * @var Order
+     * @var User
      */
     protected $user;
  
@@ -161,7 +161,7 @@ Blade templates:
 
 ## Rendering The View
 
-To send a message, use the helper function `viewable()`. You may pass an
+To serve a view, use the helper function `viewable()`. You may pass an
 instance of your viewable class to this helper function:
 
 ```
