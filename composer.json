@@ -2,7 +2,7 @@
     "name": "haganjones/laravel-viewables",
     "type": "library",
     "description": "Class based approach to handling views in Laravel.",
-    "keywords": ["laravel", "trait", "observe"],
+    "keywords": ["laravel"],
     "homepage": "https://github.com/haganjones/laravel-viewables",
     "license": "MIT",
     "autoload": {
