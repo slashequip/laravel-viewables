@@ -8,6 +8,12 @@ views in Laravel.
 composer require "haganjones/laravel-viewables"
 ```
 
+### Include Service Provider
+In `config/app.php` add the below to your service providers array:
+```
+HaganJones\LaravelViewables\Providers\ServiceProvider::class,
+```
+
 ## Writing Viewables
 
 All of a viewable class' configuration is done in the `build` method. 
