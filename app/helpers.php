@@ -8,7 +8,9 @@ use HaganJones\LaravelViewables\Contracts\Viewable as ViewableContract;
  * @param  ViewableContract  $view
  * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
  */
-function viewable(ViewableContract $view)
-{
-    return $view->render();
+if( !function_exists('viewable') ) {
+    function viewable(ViewableContract $view)
+    {
+        return $view->render();
+    }
 }
