@@ -28,5 +28,12 @@
         "orchestra/testbench": "3.3.*",
         "mockery/mockery": "0.9.*",
         "orchestra/database": "3.3.*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HaganJones\\LaravelViewables\\Providers\\ServiceProvider"
+            ]
+        }
     }
 }
