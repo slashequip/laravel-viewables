@@ -1,6 +1,7 @@
 <?php
 namespace HaganJones\LaravelViewables\View;
 
+use Illuminate\Contracts\Support\Responsable;
 use ReflectionClass;
 use ReflectionProperty;
 use BadMethodCallException;
@@ -9,7 +10,7 @@ use Illuminate\Container\Container;
 use HaganJones\LaravelViewables\Contracts\Viewable as ViewableContract;
 use Illuminate\Contracts\View\Factory as ViewFactory;
 
-class Viewable implements ViewableContract
+abstract class Viewable implements ViewableContract, Responsable
 {
     /**
      * The view name to use for the view.
@@ -24,6 +25,19 @@ class Viewable implements ViewableContract
      * @var array
      */
     public $viewData = [];
+
+    /**
+     * Abstract build function to force sub
+     * classes to implement the function
+     *
+     * @return void
+     */
+    abstract public function build();
+
+    public function toResponse($request)
+    {
+        return $this->render();
+    }
 
     /**
      * Render the view
