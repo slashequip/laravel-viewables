@@ -2,8 +2,7 @@
 namespace HaganJones\LaravelObserveProperties\Tests;
 
 use HaganJones\LaravelObserveProperties\Tests\App\Providers\TestingServiceProvider;
-use HaganJones\LaravelViewables\Providers\ServiceProvider;
-use Orchestra\Database\ConsoleServiceProvider;
+use HaganJones\LaravelViewables\Providers\ServiceProvider as LaravelViewablesServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 abstract class TestCase extends OrchestraTestCase
@@ -44,7 +43,8 @@ abstract class TestCase extends OrchestraTestCase
     protected function getPackageProviders($app)
     {
         return [
-            ServiceProvider::class,
+            LaravelViewablesServiceProvider::class,
+            TestingServiceProvider::class
         ];
     }
 }
