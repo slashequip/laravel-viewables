@@ -161,8 +161,13 @@ Blade templates:
 
 ## Rendering The View
 
-To serve a view, use the helper function `viewable()`. You may pass an
-instance of your viewable class to this helper function:
+~~To serve a view, use the helper function `viewable()`. You may pass an
+instance of your viewable class to this helper function:~~
+
+As of release 0.2 Viewables implement Laravel's Responsable Interface which
+now allows you to return a new instance of a Viewable Class straight from
+the controller. The `viewable()` function is still available but will be
+removed in a future release.
 
 ```
 <?php
@@ -182,13 +187,11 @@ class DashboardController extends Controller
      */
     public function get()
     {
-        return viewable(
-            new DashboardView(Auth::user())
-        );
+        //return viewable(
+        //    new DashboardView(Auth::user())
+        //);
+        
+        return new DashboardView(Auth::user());
     }
 }
 ```
-
-## TODO
-- Write some tests!
-- Make Viewable command
